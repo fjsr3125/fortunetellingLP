@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import ResultCard from '../ResultCard';
 
 interface FourPillarsProps {
@@ -7,9 +7,9 @@ interface FourPillarsProps {
 }
 
 const FourPillars = ({ setActive }: FourPillarsProps) => {
-  const [birthDate, setBirthDate] = useState('');
-  const [result, setResult] = useState<string | null>(null);
-  const [isCalculating, setIsCalculating] = useState(false);
+  const [birthDate, setBirthDate] = React.useState('');
+  const [result, setResult] = React.useState<string | null>(null);
+  const [isCalculating, setIsCalculating] = React.useState(false);
 
   const diagnose = () => {
     if (!birthDate) return;

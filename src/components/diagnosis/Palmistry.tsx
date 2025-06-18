@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, DragEvent } from 'react';
+import React from 'react';
 import ResultCard from '../ResultCard';
 
 interface PalmistryProps {
@@ -7,10 +7,10 @@ interface PalmistryProps {
 }
 
 const Palmistry = ({ setActive }: PalmistryProps) => {
-  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-  const [result, setResult] = useState<string | null>(null);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [dragOver, setDragOver] = useState(false);
+  const [uploadedImage, setUploadedImage] = React.useState<string | null>(null);
+  const [result, setResult] = React.useState<string | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = React.useState(false);
+  const [dragOver, setDragOver] = React.useState(false);
 
   const palmResults = [
     {
@@ -31,14 +31,14 @@ const Palmistry = ({ setActive }: PalmistryProps) => {
     }
   ];
 
-  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       processFile(file);
     }
   };
 
-  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragOver(false);
     const file = event.dataTransfer.files[0];
@@ -47,12 +47,12 @@ const Palmistry = ({ setActive }: PalmistryProps) => {
     }
   };
 
-  const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragOver(true);
   };
 
-  const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
+  const handleDragLeave = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setDragOver(false);
   };

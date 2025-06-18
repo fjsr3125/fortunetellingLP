@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import ResultCard from '../ResultCard';
 
 interface OmikujiProps {
@@ -7,10 +7,10 @@ interface OmikujiProps {
 }
 
 const Omikuji = ({ setActive }: OmikujiProps) => {
-  const [result, setResult] = useState<string | null>(null);
-  const [isShaking, setIsShaking] = useState(false);
-  const [shakeCount, setShakeCount] = useState(0);
-  const [canDraw, setCanDraw] = useState(false);
+  const [result, setResult] = React.useState<string | null>(null);
+  const [isShaking, setIsShaking] = React.useState(false);
+  const [shakeCount, setShakeCount] = React.useState(0);
+  const [canDraw, setCanDraw] = React.useState(false);
 
   const omikujiResults = [
     {

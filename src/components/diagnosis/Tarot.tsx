@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import ResultCard from '../ResultCard';
 
 interface TarotProps {
@@ -7,10 +7,10 @@ interface TarotProps {
 }
 
 const Tarot = ({ setActive }: TarotProps) => {
-  const [selectedCards, setSelectedCards] = useState<number[]>([]);
-  const [result, setResult] = useState<string | null>(null);
-  const [isDrawing, setIsDrawing] = useState(false);
-  const [showCards, setShowCards] = useState(false);
+  const [selectedCards, setSelectedCards] = React.useState<number[]>([]);
+  const [result, setResult] = React.useState<string | null>(null);
+  const [isDrawing, setIsDrawing] = React.useState(false);
+  const [showCards, setShowCards] = React.useState(false);
 
   const tarotCards = [
     { name: '愚者', meaning: '新しい始まり、純粋さ、自由な精神があなたを導きます。今は直感を信じて行動する時です。宇宙があなたに新たな冒険への扉を開いています。恐れることなく、心の声に従って歩みを進めてください。' },

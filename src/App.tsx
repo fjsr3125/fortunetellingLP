@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 import Hero from './components/Hero';
 import DiagnosisSection from './components/DiagnosisSection';
 import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const [currentDiagnosis, setCurrentDiagnosis] = useState<string | null>(null);
+  const [currentDiagnosis, setCurrentDiagnosis] = React.useState<string | null>(null);
 
   const scrollToDiagnosis = () => {
     const element = document.getElementById('diagnosis-anchor');
